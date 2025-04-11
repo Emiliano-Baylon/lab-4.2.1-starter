@@ -6,11 +6,15 @@ Wiki Pages
 
 {% block content %}
 <h3>Pages contained in this Wiki</h3>
-<ul>
+<ul style="font-size: 22px; line-height: 2; padding-left: 30px; list-style-type: disc;">
     {% for page in all_pages %}
-    <li><a href="{{ url_for('pages', name=page) }}">{{page}}</a></li>
+      <li>
+        <a href="{{ url_for('pages', name=page) }}" style="text-decoration: none; color: #3366cc;">
+          {{ page.replace('-', ' ').title() }}
+        </a>
+      </li>
     {% endfor %}
-</ul>
+  </ul>
 
 {% endblock %}
 
